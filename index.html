@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#081b29;
+    color:white;
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:20px 10%;
+    background:#112e42;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:100;
+}
+
+.logo{
+    font-size:28px;
+    color:#00abf0;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#00abf0;
+}
+
+section{
+    min-height:100vh;
+    padding:120px 10% 50px;
+}
+
+.heading{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:40px;
+    color:#00abf0;
+}
+
+.home{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.home-content{
+    flex:1;
+}
+
+.home-content h1{
+    font-size:50px;
+    margin-bottom:10px;
+}
+
+.home-content h1 span{
+    color:#00abf0;
+}
+
+.home-content h3{
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.home-content p{
+    line-height:1.7;
+    margin-bottom:25px;
+    font-size:18px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 28px;
+    background:#00abf0;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#008ac7;
+}
+
+.social-icons{
+    margin-top:25px;
+}
+
+.social-icons a{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    width:45px;
+    height:45px;
+    background:#112e42;
+    border-radius:50%;
+    color:#00abf0;
+    text-decoration:none;
+    margin-right:15px;
+    font-size:20px;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    background:#00abf0;
+    color:white;
+}
+
+.home-img img{
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid #00abf0;
+    margin-top:40px;
+}
+
+.about-box{
+    background:#112e42;
+    padding:30px;
+    border-radius:20px;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.skills-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+
+.skill-box{
+    background:#112e42;
+    padding:20px 30px;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.skill-box:hover{
+    background:#00abf0;
+}
+
+.profile-section{
+    text-align:center;
+}
+
+.profile-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.profile-image img{
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid #00abf0;
+}
+
+.profile-content{
+    max-width:500px;
+}
+
+.profile-content h3{
+    font-size:35px;
+    color:#00abf0;
+    margin-bottom:15px;
+}
+
+.profile-content p{
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.profile-details p{
+    margin-bottom:10px;
+}
+
+.edu-box{
+    background:#112e42;
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:20px;
+}
+
+.edu-box h3{
+    color:#00abf0;
+    margin-bottom:10px;
+}
+
+.project-container{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.project-box{
+    background:#112e42;
+    padding:25px;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+.project-box:hover{
+    transform:translateY(-10px);
+}
+
+.project-box h3{
+    color:#00abf0;
+    margin-bottom:15px;
+}
+
+.resume-box{
+    background:#112e42;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.resume-box p{
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+.certificate-box{
+    background:#112e42;
+    padding:30px;
+    border-radius:20px;
+    line-height:2;
+    font-size:18px;
+}
+
+form{
+    max-width:700px;
+    margin:auto;
+}
+
+form input,
+form textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:20px;
+    border:none;
+    border-radius:10px;
+    background:#112e42;
+    color:white;
+    font-size:16px;
+}
+
+textarea{
+    resize:none;
+}
+
+form button{
+    border:none;
+    cursor:pointer;
+}
+
+footer{
+    background:#112e42;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+    }
+
+    nav{
+        margin-top:15px;
+    }
+
+    nav a{
+        margin:10px;
+        display:inline-block;
+    }
+
+    .home{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
+
+    .home-content h1{
+        font-size:38px;
+    }
+
+    .home-content h3{
+        font-size:24px;
+    }
+
+    .home-img img{
+        width:240px;
+        height:240px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<a href="#" class="logo">Portfolio</a>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#profile">Profile</a>
+<a href="#education">Education</a>
+<a href="#projects">Projects</a>
+<a href="#resume">Resume</a>
+<a href="#certificates">Certificates</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="home" id="home">
+
+<div class="home-content">
+
+<h1>Hi, I'm <span>Atluri Maheswari</span></h1>
+
+<h3>Frontend Developer</h3>
+ 
+
+<p>
+Passionate web developer and
+Computer Science student.
+I create beautiful responsive
+websites using HTML, CSS and JavaScript.
+</p>
+
+<a href="MyResume(1).pdf" download class="btn">
+Download Resume
+</a>
+
+<div class="social-icons">
+<a href="#"><i class="fa-brands fa-github"></i></a>
+<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+<a href="#"><i class="fa-brands fa-instagram"></i></a>
+<a href="#"><i class="fa-brands fa-twitter"></i></a>
+</div>
+
+</div>
+
+<div class="home-img">
+<img src="photo1.jpeg" alt="Profile Image">
+</div>
+
+</section>
+"C:\Users\Atluri MAHESWARI\Desktop\photo1.jpeg"
+<section id="about">
+<h2 class="heading">About Me</h2>
+<div class="about-box">
+<p>I am a passionate and creative web developer with strong interest in frontend development.</p>
+<br>
+<p>I enjoy building modern, responsive and user-friendly websites.</p>
+<br>
+<p>My goal is to become a professional full stack developer and work on real-world projects.</p>
+</div>
+</section>
+
+<section id="skills">
+<h2 class="heading">Skills</h2>
+<div class="skills-container">
+<div class="skill-box">HTML</div>
+<div class="skill-box">CSS</div>
+<div class="skill-box">JavaScript</div>
+<div class="skill-box">Java</div>
+<div class="skill-box">Python</div>
+<div class="skill-box">C Programming</div>
+<div class="skill-box">GitHub</div>
+<div class="skill-box">Responsive Design</div>
+</div>
+</section>
+
+<section class="profile-section" id="profile">
+<h2 class="heading">Profile</h2>
+<div class="profile-container">
+<div class="profile-image">
+<img src="photo2.jpeg" alt="Maheswari Profile">
+</div>
+<div class="profile-content">
+<h3>Atluri Maheswari</h3>
+<p>
+I am a passionate frontend developer
+and Computer Science Engineering student.
+I enjoy designing responsive and modern
+websites using HTML, CSS and JavaScript.
+</p>
+<p>
+I love learning new technologies and
+improving my web development skills
+through creative projects.
+</p>
+<div class="profile-details">
+<p><strong>Age:</strong> 18</p>
+<p><strong>Location:</strong> Andhra Pradesh, India</p>
+<p><strong>Email:</strong> atlurimaheswari27@gmail.com</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="education">
+<h2 class="heading">Education</h2>
+<div class="edu-box">
+<h3>B.Tech in Computer Science</h3>
+<p>Swarnandhra Engineering College</p>
+<span>2024 - 2028</span>
+</div>
+<div class="edu-box">
+<h3>Intermediate</h3>
+<p>Vijaya Junior College</p>
+<span>2022 - 2024</span>
+</div>
+</section>
+
+<section id="projects">
+<h2 class="heading">Projects</h2>
+<div class="project-container">
+<div class="project-box">
+<h3>Portfolio Website</h3>
+<p>Professional portfolio website using HTML, CSS and JavaScript.</p>
+</div>
+<div class="project-box">
+<h3>Weather App</h3>
+<p>Weather application using API integration.</p>
+</div>
+<div class="project-box">
+<h3>Calculator App</h3>
+<p>Responsive calculator using JavaScript.</p>
+</div>
+</div>
+</section>
+
+<section id="resume">
+<h2 class="heading">Resume</h2>
+<div class="resume-box">
+<p>Click below to download my resume.</p>
+<a href="MyResume(1).pdf" download class="btn">
+Download Resume
+</a>
+</div>
+</section>
+
+<section id="certificates">
+<h2 class="heading">Certificates</h2>
+<div class="certificate-box">
+<p>✔ Web Development Certificate</p>
+<p>✔ Java Programming Certificate</p>
+<p>✔ Python Certificate</p>
+<p>✔ Internship Completion Certificate</p>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="heading">Contact Me</h2>
+<form>
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email Address" required>
+<input type="text" placeholder="Subject">
+<textarea rows="8" placeholder="Your Message"></textarea>
+<button type="submit" class="btn">
+Send Message
+</button>
+</form>
+</section>
+
+<footer>
+<p>© 2026 Atluri Maheswari | All Rights Reserved</p>
+</footer>
+
+<img src="images/profile.jpg" alt="Maheswari">
+<img src="images/profile.jpg" alt="Profile Image">
+
+</body>
+</html>
